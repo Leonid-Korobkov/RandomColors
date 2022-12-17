@@ -31,10 +31,8 @@ function setRandomColors(isInitial) {
   let colors = isInitial ? getColorsFromHash() : []
   cols.forEach((col, index) => {
     const isLocked = col.querySelector('i').classList.contains('fa-lock')
-    if (isLocked) {
-      colors.push(text.textContent)
-      return
-    } else {
+    if (isLocked) return
+    else {
       const text = col.querySelector('h2 span')
       const buttonLock = col.querySelector('button')
       const color = isInitial 
